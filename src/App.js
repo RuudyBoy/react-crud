@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./components/home/HomePage";
+import SportList from "./components/SportList";
+import SportDetail from "./components/SportDetail";
+import Contact from "./components/contact/Contact";
 import LoginPage from "./components/login/LoginPage";
 import DashboardPage from "./components/dashboard/DashboardPage";
 import Nav from "./components/layout/Nav";
@@ -15,15 +17,15 @@ function App() {
 
 				<div className="container">
 					<Switch>
-						<Route exact path="/">
-							<HomePage />
-						</Route>
+					<Route path='/' exact component={SportList} />
+					<Route path='/detail/:id' component={SportDetail} />
 						<Route path="/login">
 							<LoginPage />
 						</Route>
 						<Route path="/dashboard" exact>
 							<DashboardPage />
 						</Route>
+						<Route path="/contact"> <Contact /> </Route>
 					</Switch>
 				</div>
 			</Router>

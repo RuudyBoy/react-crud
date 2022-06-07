@@ -5,10 +5,10 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import FormError from "../common/FormError";
-import { BASE_URL, TOKEN_PATH } from "../../constants/api";
+import { TOKEN_PATH } from "../../constants/api";
 import AuthContext from "../../context/AuthContext";
 
-const url = BASE_URL + TOKEN_PATH;
+const url = TOKEN_PATH;
 
 const schema = yup.object().shape({
 	username: yup.string().required("Please enter your username"),

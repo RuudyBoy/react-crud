@@ -1,2 +1,3 @@
-export const BASE_URL = process.env.REACT_APP_BASE_URL;
-export const TOKEN_PATH = "jwt-auth/v1/token";
+export const BASE_URL = "http://localhost/project-exam/wp-json/"
+export const TOKEN_PATH = "http://localhost/project-exam/wp-json/jwt-auth/v1/token";
+
