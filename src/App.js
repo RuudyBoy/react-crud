@@ -4,27 +4,30 @@ import HomePage from "./components/home/HomePage";
 import LoginPage from "./components/login/LoginPage";
 import DashboardPage from "./components/dashboard/DashboardPage";
 import Nav from "./components/layout/Nav";
+import { AuthProvider } from "./context/AuthContext";
 import "./App.css";
 
 function App() {
 	return (
-		<Router>
-			<Nav />
+		<AuthProvider>
+			<Router>
+				<Nav />
 
-			<div className="container">
-				<Switch>
-					<Route exact path="/">
-						<HomePage />
-					</Route>
-					<Route path="/login">
-						<LoginPage />
-					</Route>
-					<Route path="/dashboard" exact>
-						<DashboardPage />
-					</Route>
-				</Switch>
-			</div>
-		</Router>
+				<div className="container">
+					<Switch>
+						<Route exact path="/">
+							<HomePage />
+						</Route>
+						<Route path="/login">
+							<LoginPage />
+						</Route>
+						<Route path="/dashboard" exact>
+							<DashboardPage />
+						</Route>
+					</Switch>
+				</div>
+			</Router>
+		</AuthProvider>
 	);
 }
 
